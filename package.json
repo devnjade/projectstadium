@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "git:quick": "git add . && git commit -m 'quick commit' && git push"
   },
   "dependencies": {
     "next": "12.2.5",
@@ -17,8 +18,11 @@
     "@types/node": "18.7.14",
     "@types/react": "18.0.17",
     "@types/react-dom": "18.0.6",
-    "eslint": "8.23.0",
+    "eslint": "^8.23.0",
     "eslint-config-next": "12.2.5",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "prettier": "^2.7.1",
     "sass": "^1.54.6",
     "typescript": "4.8.2"
   }
