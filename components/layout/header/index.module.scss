@@ -1,0 +1,27 @@
+@import 'styles/variables';
+
+.wrapper{
+  width: 100%;
+  background: $grey-bg;
+  border-bottom: 1px solid $black;
+
+  .header{
+    min-height: $header-height;
+    max-width: 1440px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    .logo_style{
+      width: 400px;
+      height: 100%;
+      margin-left: 10px;
+    }
+
+    .connect_wrap{
+      margin-right: 24px;
+    }
+  }
+}

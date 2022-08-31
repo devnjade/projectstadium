@@ -1,0 +1,113 @@
+@import 'styles/variables';
+
+.card{
+  border-right: 1px solid $black;
+  border-bottom: 1px solid $black;
+  background-color: $white;
+  transition: background-color .5s ease-in-out;
+  cursor: pointer;
+
+  &:nth-child(4n){
+    border-right: 0;
+  }
+
+  &:hover{
+    background-color: $card-grey;
+  }
+
+  .preview{
+    min-height: 280px;
+    border-bottom: 1px solid $black;
+  }
+
+  .details{
+    display: flex;
+    flex-direction: column;
+
+    .team_stats{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 8px;
+      padding: 10px;
+      border-bottom: 1px solid $black;
+
+      span{
+        background: $off-green;
+        color: $black;
+        font-size: 0.625rem;
+        font-weight: 700;
+        padding: 4px 8px;
+        text-transform: uppercase;
+        border-radius: 99px;
+      }
+
+      p{
+        color: $grey;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+    }
+
+    .main_info{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+      border-bottom: 1px solid $grey-100;
+
+      .content{
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+
+        span {
+          font-size: 0.875rem;
+          color: $grey;
+          font-weight: 700;
+          text-transform: uppercase;
+        }
+
+        p {
+          color: $grey;
+          font-weight: 700;
+          text-transform: uppercase;
+        }
+      }
+
+      .bid{
+        padding: 4px 16px;
+        background: $white;
+        color: $black;
+        border: 1px solid $black;
+        border-radius: 99px;
+        font-size: 0.625rem;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+    }
+    
+    .extras {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 14px;
+      padding: 10px;
+    
+      span {
+        font-size: 0.875rem;
+        color: $grey;
+        font-weight: 500;
+        text-transform: capitalize;
+      }
+    
+      p {
+        font-size: 0.875rem;
+        color: $black;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+    }
+  }
+}

@@ -1,0 +1,54 @@
+@import 'styles/variables';
+
+.wrapper{
+  width: $sidebar-width;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 16px;
+  border-right: 1px solid $black;
+  min-height: calc(100vh - $header-height);
+  
+  ::selection{
+    display: none;
+  }
+
+  .top{
+    .hypers{
+      display: flex;
+      flex-direction: row;
+      gap: 4px;
+      margin-bottom: 16px;
+      cursor: pointer;
+
+      &--head{
+        margin-bottom: 32px;
+      }
+
+      &--off{
+        color: $grey;
+        cursor: not-allowed;
+      }
+
+      p{
+        font-weight: 700;
+        font-size: 1.25rem;
+        line-height: 1.5rem;
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  .foot{
+    span{
+      font-size: 4rem;
+    }
+    p{
+      font-size: 0.875rem;
+      color: $grey;
+      margin-top: 18px;
+      line-height: 1.0625rem;
+      font-weight: 500;
+    }
+  }
+}
