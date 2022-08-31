@@ -1,8 +1,8 @@
 import type { NextPage } from 'next';
 import { TeamView } from 'views';
 
-const Team: NextPage = () => {
+const Profile: NextPage = () => {
   return <TeamView />;
 };
 
-export default Team;
+export default Profile;

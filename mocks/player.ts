@@ -1,0 +1,81 @@
+let num = 0;
+
+export const players = [
+  {
+    id: num++,
+    team: 'blvkhand',
+    tag: 'sirsu #000000',
+    eth_address: 'sirsu.eth',
+    last_offer: '2.4',
+  },
+  {
+    id: num++,
+    team: 'blvkhand',
+    tag: 'sirsu #000000',
+    eth_address: 'sirsu.eth',
+    last_offer: '2.4',
+  },
+  {
+    id: num++,
+    team: 'blvkhand',
+    tag: 'sirsu #000000',
+    eth_address: 'sirsu.eth',
+    last_offer: '2.4',
+  },
+  {
+    id: num++,
+    team: 'blvkhand',
+    tag: 'sirsu #000000',
+    eth_address: 'sirsu.eth',
+    last_offer: '2.4',
+  },
+  {
+    id: num++,
+    team: 'blvkhand',
+    tag: 'sirsu #000000',
+    eth_address: 'sirsu.eth',
+    last_offer: '2.4',
+  },
+  {
+    id: num++,
+    team: 'blvkhand',
+    tag: 'sirsu #000000',
+    eth_address: 'sirsu.eth',
+    last_offer: '2.4',
+  },
+  {
+    id: num++,
+    team: 'blvkhand',
+    tag: 'sirsu #000000',
+    eth_address: 'sirsu.eth',
+    last_offer: '2.4',
+  },
+  {
+    id: num++,
+    team: 'blvkhand',
+    tag: 'sirsu #000000',
+    eth_address: 'sirsu.eth',
+    last_offer: '2.4',
+  },
+  {
+    id: num++,
+    team: 'blvkhand',
+    tag: 'sirsu #000000',
+    eth_address: 'sirsu.eth',
+    last_offer: '2.4',
+  },
+  {
+    id: num++,
+    team: 'blvkhand',
+    tag: 'sirsu #000000',
+    eth_address: 'sirsu.eth',
+    last_offer: '2.4',
+  },
+  {
+    id: num++,
+    team: 'blvkhand',
+    tag: 'sirsu #000000',
+    eth_address: 'sirsu.eth',
+    last_offer: '2.4',
+  },
+];

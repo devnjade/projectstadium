@@ -1,8 +1,8 @@
 import type { NextPage } from 'next';
-import { PlayerView } from 'views';
+import { PlayersView } from 'views';
 
 const Player: NextPage = () => {
-  return <PlayerView />;
+  return <PlayersView />;
 };
 
 export default Player;

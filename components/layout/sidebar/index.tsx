@@ -12,12 +12,12 @@ const Sidebar: React.FC = () => {
         >
           <p>{'>'} menu</p>
         </div>
-        <Link href="/">
+        <Link href="/players">
           <div className={styles.hypers}>
             <p>{'>'} players</p>
           </div>
         </Link>
-        <Link href="/">
+        <Link href="/teams">
           <div className={styles.hypers}>
             <p>{'>'} teams</p>
           </div>

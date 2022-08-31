@@ -10,7 +10,7 @@
         "tabWidth": 2,
         "singleQuote": true,
         "semi": true,
-        "bracketSameLine": true
+        "bracketSameLine": false
       }
     ]
   }

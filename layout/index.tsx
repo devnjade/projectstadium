@@ -14,7 +14,7 @@ const Layout: React.FC<ILayout> = ({ header, sidebar, children }) => {
       {header && <Header />}
       <div className={styles.content}>
         {sidebar && <Sidebar />}
-        <div className={styles.main}>{children}</div>
+        {children}
       </div>
     </div>
   );
