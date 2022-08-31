@@ -1,0 +1,17 @@
+@import 'styles/variables';
+
+.card{
+  border: 1px solid $black;
+  background-color: $white;
+  transition: background-color .5s ease-in-out;
+  cursor: pointer;
+
+  &:hover{
+    background-color: $card-grey;
+  }
+
+  .preview{
+    min-height: 250px;
+    border-bottom: 1px solid $black;
+  }
+}

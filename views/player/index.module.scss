@@ -1,0 +1,65 @@
+@import 'styles/variables';
+
+.wrapper{
+  width: 100%;
+  position: relative;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  .topbar{
+    height: 72px;
+    border-bottom: 1px solid $black;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 32px;
+
+    .ops{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 16px;
+
+      .hyper{
+        font-weight: 700;
+        font-size: 1.25rem;
+        line-height: 1.5rem;
+        text-transform: uppercase;
+        margin-right: 40px;
+
+        &--button {
+          font-weight: 500;
+          margin: 0;
+        }
+
+        &--active{
+          font-weight: 700;
+          text-decoration: line-through;
+        }
+      }
+    }
+
+    .create{
+      font-weight: 700;
+      font-size: 1.25rem;
+      line-height: 1.5rem;
+      text-transform: uppercase;
+      color: $orange;
+    }
+  }
+
+  .content{
+    height: 100%;
+    background: $white;
+    flex-grow: 1;
+    overflow-y: scroll;
+
+    .grid{
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  }
+}
