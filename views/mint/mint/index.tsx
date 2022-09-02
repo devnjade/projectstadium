@@ -32,8 +32,6 @@ const MintView: React.FC<IMint> = ({ type }) => {
     setPickedColor(value);
   };
 
-  console.log(disabled);
-
   const previewMint = () => {
     setStage(stages.PREVIEW);
   };
@@ -50,7 +48,12 @@ const MintView: React.FC<IMint> = ({ type }) => {
   };
 
   React.useEffect(() => {
-    if (tag !== null && pickedColor !== null && payoutAddress !== null) {
+    if (
+      tag !== null &&
+      pickedColor !== null &&
+      payoutAddress !== null &&
+      payoutAddress?.length === 42
+    ) {
       setDisabled(false);
     } else {
       setDisabled(true);
@@ -65,6 +68,9 @@ const MintView: React.FC<IMint> = ({ type }) => {
   let showMintingTxt = stage != stages.INIT && stage != stages.PREVIEW;
   let showMintedTxt =
     stage != stages.INIT && stage != stages.PREVIEW && stage != stages.MINT;
+
+  const add = '0XC90E2943228E9A9A14193294C463F7870BE5FE8B';
+  console.log(add.length);
 
   return (
     <Layout header sidebar>
