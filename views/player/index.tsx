@@ -2,6 +2,7 @@ import Layout from 'layout';
 import React from 'react';
 import styles from './index.module.scss';
 import down from 'assets/svgs/arrowdown.svg';
+import pbg from 'assets/images/playerbg.png';
 import Image from 'next/image';
 
 const PlayerView: React.FC = () => {
@@ -11,7 +12,14 @@ const PlayerView: React.FC = () => {
         <div className={styles.bar}>
           <p>player {'>'} sirsu</p>
         </div>
-        <div className={styles.banner}></div>
+        <div className={styles.banner}>
+          <Image
+            src={pbg}
+            alt="player_card_bg"
+            layout="fill"
+            objectFit="cover"
+          />
+        </div>
         <div className={styles.bar}>
           <p className={styles.mid}>player info</p>
           <span>

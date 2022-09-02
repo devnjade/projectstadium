@@ -1,6 +1,8 @@
 import React from 'react';
 import styles from './index.module.scss';
 import Image from 'next/image';
+import teamImage from 'assets/images/teammock.png';
+import playerImage from 'assets/images/playermock.png';
 import { useRouter } from 'next/router';
 
 interface ICard {
@@ -23,7 +25,16 @@ const Card: React.FC<ICard> = ({ type, customStyle }) => {
 
   return (
     <div onClick={() => singlePage(type)} className={styles.card}>
-      <div className={styles.preview}></div>
+      <div className={styles.preview}>
+        <div className={styles.image_container}>
+          <Image
+            src={type == 'player' ? playerImage : teamImage}
+            alt={type == 'player' ? 'player_nft_card' : 'team_nft_card'}
+            layout="fill"
+            objectFit="contain"
+          />
+        </div>
+      </div>
       <div className={styles.details}>
         <div className={styles.team_stats}>
           <span>

@@ -2,6 +2,7 @@ import Layout from 'layout';
 import React from 'react';
 import styles from './index.module.scss';
 import down from 'assets/svgs/arrowdown.svg';
+import tbg from 'assets/images/teambg.png';
 import Image from 'next/image';
 
 const TeamView: React.FC = () => {
@@ -11,7 +12,14 @@ const TeamView: React.FC = () => {
         <div className={styles.bar}>
           <p>TEAMS {'>'} BLVKHVND</p>
         </div>
-        <div className={styles.banner}></div>
+        <div className={styles.banner}>
+          <Image
+            src={tbg}
+            alt="player_card_bg"
+            layout="fill"
+            objectFit="cover"
+          />
+        </div>
         <div className={styles.bar}>
           <p className={styles.mid}>team info</p>
           <span>
