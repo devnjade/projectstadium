@@ -61,6 +61,11 @@ const MintView: React.FC<IMint> = ({ type }) => {
     return () => clearTimeout(timerRef.current);
   }, []);
 
+  let showPreviewTxt = stage != stages.INIT;
+  let showMintingTxt = stage != stages.INIT && stage != stages.PREVIEW;
+  let showMintedTxt =
+    stage != stages.INIT && stage != stages.PREVIEW && stage != stages.MINT;
+
   return (
     <Layout header sidebar>
       <div className={styles.wrapper}>
@@ -78,106 +83,121 @@ const MintView: React.FC<IMint> = ({ type }) => {
         <div className={styles.content}>
           <div className={styles.left}>
             <div className={styles.container}>
+              <p
+                className={
+                  stage !== stages.INIT
+                    ? `${styles.header} ${styles['header--fade']}`
+                    : styles.header
+                }
+              >
+                {'>'} NOW, TELL US WHO YOU <br /> ARE ANON.
+              </p>
+              {showPreviewTxt && (
+                <p
+                  className={
+                    stage !== stages.PREVIEW
+                      ? `${styles.header} ${styles['header--fade']}`
+                      : styles.header
+                  }
+                >
+                  {'>'} LET ME GET THIS STRAIGHT...
+                  <br />
+                  <br />
+                  YOUR NAME IS {tag}, YOUR <br /> COLOR IS {pickedColor} AND YOU
+                  <br />
+                  ARE A PLAYER?
+                  <br />
+                  <br />
+                  IF SO, CREATE YOUR CARD.
+                </p>
+              )}
+              {showMintingTxt && (
+                <p
+                  className={
+                    stage !== stages.MINT
+                      ? `${styles.header} ${styles['header--fade']}`
+                      : styles.header
+                  }
+                >
+                  {'>'} CREATING CARD....
+                </p>
+              )}
+              {showMintedTxt && (
+                <p
+                  className={
+                    stage !== stages.MINTED
+                      ? `${styles.header} ${styles['header--fade']}`
+                      : styles.header
+                  }
+                >
+                  {'>'} YOU ARE NOW A PLAYER. IT’S <br /> TIME YOU FIND YOURSELF
+                  A TEAM.
+                </p>
+              )}
               {stage == stages.INIT && (
-                <>
-                  <p
-                    className={
-                      stage !== stages.INIT
-                        ? `${styles.header} ${styles['header--fade']}`
-                        : styles.header
-                    }
-                  >
-                    {'>'} NOW, TELL US WHO YOU <br /> ARE ANON.
-                  </p>
-                  <div className={styles.details}>
-                    <p className={styles.title}>PLAYER DETAILS</p>
-                    <div className={styles.form}>
-                      <div className={styles.input_group}>
-                        <label>Gamertag</label>
-                        <input
-                          onChange={(e) => setTag(e.target.value)}
-                          type="text"
-                          value={tag}
-                        />
-                      </div>
-                      <div className={styles.color_picker}>
-                        <div className={styles.input_group}>
-                          <label>PRIMARY COLOR</label>
-                          <input value={pickedColor!} type="text" disabled />
-                        </div>
-                        <div className={styles.colors}>
-                          {colors.map((i) => (
-                            <button
-                              key={i.id}
-                              className={styles.picker}
-                              style={{
-                                background: i.hex,
-                              }}
-                              onClick={() => {
-                                pickColor(i.name);
-                              }}
-                            />
-                          ))}
-                        </div>
-                      </div>
-                      <div className={styles.input_group}>
-                        <label>PAYOUT ADDRESS</label>
-                        <input
-                          onChange={(e) => setPayoutAddress(e.target.value)}
-                          type="text"
-                          value={payoutAddress}
-                        />
-                      </div>
-                      <p className={styles.sub}>
-                        The address that will receive any withdrawals and
-                        royalties. It can be your personal wallet, a
-                        multisignature wallet, or an external splits contract.
-                      </p>
+                <div className={styles.details}>
+                  <p className={styles.title}>PLAYER DETAILS</p>
+                  <div className={styles.form}>
+                    <div className={styles.input_group}>
+                      <label>Gamertag</label>
+                      <input
+                        onChange={(e) => setTag(e.target.value)}
+                        type="text"
+                        value={tag}
+                      />
                     </div>
+                    <div className={styles.color_picker}>
+                      <div className={styles.input_group}>
+                        <label>PRIMARY COLOR</label>
+                        <input value={pickedColor!} type="text" disabled />
+                      </div>
+                      <div className={styles.colors}>
+                        {colors.map((i) => (
+                          <button
+                            key={i.id}
+                            className={styles.picker}
+                            style={{
+                              background: i.hex,
+                            }}
+                            onClick={() => {
+                              pickColor(i.name);
+                            }}
+                          />
+                        ))}
+                      </div>
+                    </div>
+                    <div className={styles.input_group}>
+                      <label>PAYOUT ADDRESS</label>
+                      <input
+                        onChange={(e) => setPayoutAddress(e.target.value)}
+                        type="text"
+                        value={payoutAddress}
+                      />
+                    </div>
+                    <p className={styles.sub}>
+                      The address that will receive any withdrawals and
+                      royalties. It can be your personal wallet, a
+                      multisignature wallet, or an external splits contract.
+                    </p>
                   </div>
-                </>
+                </div>
               )}
               {stage == stages.PREVIEW && (
-                <>
-                  <p className={styles.header}>
-                    {'>'} LET ME GET THIS STRAIGHT...
-                    <br />
-                    <br />
-                    YOUR NAME IS {tag}, YOUR <br /> COLOR IS {pickedColor} AND
-                    YOU
-                    <br />
-                    ARE A PLAYER?
-                    <br />
-                    <br />
-                    IF SO, CREATE YOUR CARD.
-                  </p>
-                  {stage == stages.PREVIEW && (
-                    <button onClick={safelyMint} className={styles.create}>
-                      CREATE PLAYER CARD
-                    </button>
-                  )}
-                </>
-              )}
-              {stage == stages.MINT && (
-                <p className={styles.header}>{'>'} CREATING CARD....</p>
+                <button onClick={safelyMint} className={styles.create}>
+                  CREATE PLAYER CARD
+                </button>
               )}
               {stage == stages.MINTED && (
-                <>
-                  <p className={styles.header}>
-                    {'>'} YOU ARE NOW A PLAYER. IT’S <br /> TIME YOU FIND
-                    YOURSELF A TEAM.
-                  </p>
-                  <div className={styles.minted_buttons}>
-                    <Link href="/player/io">
-                      <button type="button">VIEW PLAYER CARD</button>
-                    </Link>
-                    <Link href="/teams">
-                      <button className={styles.invert} type="button">
-                        FIND TEAMS
-                      </button>
-                    </Link>
-                  </div>
-                </>
+                <div className={styles.minted_buttons}>
+                  <Link href="/players/io">
+                    <button type="button">VIEW PLAYER CARD</button>
+                  </Link>
+                  <Link href="/teams">
+                    <button className={styles.invert} type="button">
+                      FIND TEAMS
+                    </button>
+                  </Link>
+                </div>
               )}
             </div>
           </div>
