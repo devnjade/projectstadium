@@ -24,7 +24,11 @@ const TeamsView: React.FC = () => {
               OPEN TEAMS
             </button>
           </div>
-          <button className={styles.create}>CREATE TEAM</button>
+          <Link href="/mint/team">
+            <button type="button" className={styles.create}>
+              CREATE TEAM
+            </button>
+          </Link>
         </div>
 
         <div className={styles.content}>

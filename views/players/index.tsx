@@ -24,7 +24,11 @@ const PlayersView: React.FC = () => {
               FREE AGENCY
             </button>
           </div>
-          <button className={styles.create}>CREATE PLYR CARD</button>
+          <Link href="/mint/player">
+            <button type="button" className={styles.create}>
+              CREATE PLYR CARD
+            </button>
+          </Link>
         </div>
 
         <div className={styles.content}>
