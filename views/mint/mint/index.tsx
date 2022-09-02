@@ -50,7 +50,12 @@ const MintView: React.FC<IMint> = ({ type }) => {
   };
 
   React.useEffect(() => {
-    if (tag !== null && pickedColor !== null && payoutAddress !== null) {
+    if (
+      tag !== null &&
+      pickedColor !== null &&
+      payoutAddress !== null &&
+      payoutAddress?.length !== 40
+    ) {
       setDisabled(false);
     } else {
       setDisabled(true);
