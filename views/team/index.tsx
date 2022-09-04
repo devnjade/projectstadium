@@ -75,7 +75,7 @@ const TeamView: React.FC = () => {
             <div className={styles.box}>
               <span>RECRUITMENT STATUS</span>
               <p>OPEN</p>
-              <button>FIND A TEAM</button>
+              <button>PLACE AN OFFER</button>
             </div>
             <div className={styles.list}>
               <p className={styles.title}>ROSTER LIST</p>
