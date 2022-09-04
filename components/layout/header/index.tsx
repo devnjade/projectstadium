@@ -2,10 +2,10 @@ import React from 'react';
 import styles from './index.module.scss';
 import logo from 'assets/svgs/logo.svg';
 import Image from 'next/image';
-import RbKitButton from 'components/shared/rbkitButton';
 import { useRouter } from 'next/router';
 import { useAccount } from 'wagmi';
 import Link from 'next/link';
+import { RbKitButton } from 'components';
 
 const Header: React.FC = () => {
   const router = useRouter();
