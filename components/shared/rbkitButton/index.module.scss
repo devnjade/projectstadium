@@ -1,0 +1,30 @@
+@import 'styles/variables';
+
+.wrapper{
+  display: flex;
+
+  .connect{
+    font-weight: 700;
+    text-transform: uppercase;
+    background: $off-green;
+    padding: 14px 24px;
+    border-radius: 16px;
+  }
+
+  .wrong{
+    font-weight: 700;
+    text-transform: uppercase;
+    background: $p-off-red;
+    padding: 14px 24px;
+    border-radius: 16px;
+  }
+
+  .profile{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+}

@@ -4,6 +4,7 @@ import styles from './index.module.scss';
 import down from 'assets/svgs/arrowdown.svg';
 import pbg from 'assets/images/playerbg.png';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const PlayerView: React.FC = () => {
   return (
@@ -90,13 +91,17 @@ const PlayerView: React.FC = () => {
               <div className={styles.rec_status}>
                 <span>RECRUITMENT STATUS</span>
                 <p>OPEN</p>
-                <button>FIND A TEAM</button>
+                <Link href="/teams">
+                  <button type="button">FIND A TEAM</button>
+                </Link>
               </div>
             </div>
             <div className={`${styles.box} ${styles['box--team']}`}>
               <span>TEAM</span>
               <p>YOU ARE NOT PART OF A TEAM</p>
-              <button>CREATE TEAM</button>
+              <Link href="/mint/team">
+                <button type="button">CREATE TEAM</button>
+              </Link>
             </div>
           </div>
         </div>

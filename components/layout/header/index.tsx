@@ -2,17 +2,30 @@ import React from 'react';
 import styles from './index.module.scss';
 import logo from 'assets/svgs/logo.svg';
 import Image from 'next/image';
-import { ConnectButton } from '@rainbow-me/rainbowkit';
+import { useRouter } from 'next/router';
+import { useAccount } from 'wagmi';
+import Link from 'next/link';
+import { RbKitButton } from 'components';
 
 const Header: React.FC = () => {
+  const router = useRouter();
+
+  const { address } = useAccount();
+
+  const viewProfile = () => {
+    router.push(`/players/${address}`);
+  };
+
   return (
     <header className={styles.wrapper}>
       <div className={styles.header}>
-        <div className={styles.logo_style}>
-          <Image src={logo} alt="project_stadium_logo" layout="responsive" />
-        </div>
+        <Link href="/">
+          <div className={styles.logo_style}>
+            <Image src={logo} alt="project_stadium_logo" layout="responsive" />
+          </div>
+        </Link>
         <div className={styles.connect_wrap}>
-          <ConnectButton showBalance={false} />
+          <RbKitButton onAccount={viewProfile} />
         </div>
       </div>
     </header>

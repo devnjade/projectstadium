@@ -76,7 +76,8 @@ const MintView: React.FC<IMint> = ({ type }) => {
     <Layout header sidebar>
       <div className={styles.wrapper}>
         <div className={styles.bar}>
-          <p>CREATE PLYR or TEAM {'>'} PLAYER CARD</p>
+          {type == 'player' && <p>CREATE PLYR or TEAM {'>'} PLYR CARD</p>}
+          {type == 'team' && <p>CREATE PLYR or TEAM {'>'} TEAM CARD</p>}
           {stage === stages.INIT && (
             <button onClick={previewMint} disabled={disabled}>
               CREATE {'→'}
